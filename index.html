@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colors Page</title>
+    <style>
+      body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        background-color: rgb(50, 50, 50);
+        padding: 50px;
+      }
+
+      .color-block {
+        width: 150px;
+        height: 150px;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var colors = [
+        { name: "Adan_ea", hex: "#B02020", rgb: "176, 32, 32" },
+        { name: "Mayo_n_ez", hex: "#008B8B", rgb: "0, 139, 139" },
+        { name: "Nalhaak", hex: "#D93F77", rgb: "217, 63, 119" },
+        { name: "Usishiiire", hex: "#C200FA", rgb: "194, 0, 250" },
+        { name: "Zennf_", hex: "#1F8B4C", rgb: "31, 139, 76" },
+      ];
+
+      function generateColorBlocks() {
+        var container = document.body;
+
+        colors.forEach(function (color) {
+          var colorBlock = document.createElement("div");
+          colorBlock.className = "color-block";
+          colorBlock.style.backgroundColor = color.hex;
+          colorBlock.style.color = "#ffffff";
+
+          var nameElement = document.createElement("div");
+          nameElement.textContent = "Nom: " + color.name;
+
+          var hexElement = document.createElement("div");
+          hexElement.textContent = "HEX: " + color.hex;
+
+          var rgbElement = document.createElement("div");
+          rgbElement.textContent = "RGB: " + color.rgb;
+
+          colorBlock.appendChild(nameElement);
+          colorBlock.appendChild(hexElement);
+          colorBlock.appendChild(rgbElement);
+
+          container.appendChild(colorBlock);
+        });
+      }
+      generateColorBlocks();
+    </script>
+  </body>
+</html>
